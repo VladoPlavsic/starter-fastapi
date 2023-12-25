@@ -29,6 +29,9 @@ async def read_item(item_id: int):
 async def list_items():
     return [{"item_id": 1, "name": "Foo"}, {"item_id": 2, "name": "Bar"}]
 
+@app.get("/calculate/{a}/{b}")
+async def calculate(a, b):
+    return {"result": int(a) + int(b)}
 
 @app.post("/items/")
 async def create_item(item: Item):
